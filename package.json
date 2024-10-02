@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc",
-    "build": "nx vite:build",
+    "build": "nx vite:build --verbose",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "nx vite:preview"
   },
