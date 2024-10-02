@@ -1,9 +1,16 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
-    "typecheck": { "cache": true },
-    "build": { "cache": true, "dependsOn": ["typecheck"] },
-    "lint": { "cache": true }
+    "typecheck": {
+      "cache": true
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": ["typecheck"]
+    },
+    "lint": {
+      "cache": true
+    }
   },
   "defaultBase": "master",
   "plugins": [
@@ -18,8 +25,23 @@
         "typecheckTargetName": "vite:typecheck"
       }
     },
-    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
   ],
-  "generators": { "@nx/react": { "library": { "unitTestRunner": "vitest" } } },
-  "nxCloudId": "66fcf4839fb700eb0f226fa0"
+  "generators": {
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "vitest"
+      }
+    }
+  },
+  "nxCloudId": "66fcf4839fb700eb0f226fa0",
+  "namedInputs": {
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
+    "default": ["sharedGlobals"]
+  }
 }
